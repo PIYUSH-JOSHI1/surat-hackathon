@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevProfile Analyzer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-code"></i>
+                <h1>DevProfile Analyzer</h1>
+            </div>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Optimize Your Developer Profile</h1>
+                <p>Get AI-powered insights on your digital presence and improve your chances of landing your dream job.</p>
+                <a href="#analyzer" class="btn primary">Analyze My Profile</a>
+            </div>
+            <div class="hero-image">
+                <img src="assets/images/hero-image.svg" alt="Developer profile analysis">
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <h2>Key Features</h2>
+            <div class="feature-cards">
+                <div class="feature-card">
+                    <i class="fas fa-database"></i>
+                    <h3>Data Aggregation</h3>
+                    <p>Automatically collects and analyzes data from GitHub, LinkedIn, and coding platforms.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Profile Scoring</h3>
+                    <p>Evaluates coding contributions, project diversity, and professional engagement.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Insight Generation</h3>
+                    <p>Provides detailed breakdown of strengths, weaknesses, and recommendations.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-trophy"></i>
+                    <h3>Recruiter Readiness</h3>
+                    <p>Generates a hiring potential score to optimize your digital presence.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="how-it-works">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Input Your Profiles</h3>
+                    <p>Enter your LinkedIn, GitHub, and coding platform profiles or upload your resume.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>AI Analysis</h3>
+                    <p>Our AI analyzes your digital presence across multiple platforms.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Get Insights</h3>
+                    <p>Receive a comprehensive analysis with actionable recommendations.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="analyzer" class="analyzer">
+            <h2>Analyze Your Developer Profile</h2>
+            <div class="analyzer-container">
+                <form id="profile-form">
+                    <div class="form-group">
+                        <label for="resume">Upload Resume (PDF/DOCX)</label>
+                        <div class="file-upload">
+                            <input type="file" id="resume" accept=".pdf,.docx">
+                            <div class="file-upload-label">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <span>Choose a file</span>
+                            </div>
+                            <div class="file-name"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="linkedin">LinkedIn Profile URL</label>
+                        <div class="input-with-icon">
+                            <i class="fab fa-linkedin"></i>
+                            <input type="url" id="linkedin" placeholder="https://linkedin.com/in/username">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="github">GitHub Profile URL</label>
+                        <div class="input-with-icon">
+                            <i class="fab fa-github"></i>
+                            <input type="url" id="github" placeholder="https://github.com/username">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="portfolio">Portfolio URL (Optional)</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-globe"></i>
+                            <input type="url" id="portfolio" placeholder="https://yourportfolio.com">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label for="leetcode">LeetCode Username (Optional)</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-code"></i>
+                                <input type="text" id="leetcode" placeholder="username">
+                            </div>
+                        </div>
+                        <div class="form-group half">
+                            <label for="codeforces">CodeForces Username (Optional)</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-code"></i>
+                                <input type="text" id="codeforces" placeholder="username">
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn primary full-width">Analyze My Profile</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <i class="fas fa-code"></i>
+                <h2>DevProfile Analyzer</h2>
+            </div>
+            <p>© 2025 DevProfile Analyzer. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="loading-overlay" class="loading-overlay hidden">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <h3>Analyzing your profile...</h3>
+            <p>This may take a few moments</p>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+

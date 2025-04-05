@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Analysis Dashboard | DevProfile Analyzer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="dashboard-page">
+    <header class="dashboard-header">
+        <nav>
+            <div class="logo">
+                <i class="fas fa-code"></i>
+                <h1>DevProfile Analyzer</h1>
+            </div>
+            <div class="user-profile">
+                <span id="user-name">Loading...</span>
+                <a href="index.html" class="btn outline small">New Analysis</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="dashboard-main">
+        <aside class="dashboard-sidebar">
+            <div class="profile-summary">
+                <div class="profile-image">
+                    <img id="profile-image" src="assets/images/default-avatar.svg" alt="Profile Image">
+                </div>
+                <h3 id="sidebar-name">Loading...</h3>
+                <p id="sidebar-title">Software Developer</p>
+            </div>
+            <nav class="dashboard-nav">
+                <ul>
+                    <li><a href="#overview" class="active"><i class="fas fa-home"></i> Overview</a></li>
+                    <li><a href="#skills"><i class="fas fa-code"></i> Skills Analysis</a></li>
+                    <li><a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a></li>
+                    <li><a href="#contributions"><i class="fas fa-code-branch"></i> Contributions</a></li>
+                    <li><a href="#recommendations"><i class="fas fa-lightbulb"></i> Recommendations</a></li>
+                    <li><a href="#comparison"><i class="fas fa-chart-bar"></i> Peer Comparison</a></li>
+                </ul>
+            </nav>
+            <div class="overall-score">
+                <h4>Recruiter Readiness Score</h4>
+                <div class="score-circle">
+                    <span id="overall-score-value">0</span>
+                </div>
+            </div>
+        </aside>
+
+        <div class="dashboard-content">
+            <section id="overview" class="dashboard-section active">
+                <h2>Profile Overview</h2>
+                <div class="overview-cards">
+                    <div class="overview-card">
+                        <div class="overview-icon">
+                            <i class="fas fa-code-branch"></i>
+                        </div>
+                        <div class="overview-details">
+                            <h4>GitHub Activity</h4>
+                            <p id="github-repos">0 Repositories</p>
+                            <p id="github-commits">0 Commits (Last Year)</p>
+                        </div>
+                    </div>
+                    <div class="overview-card">
+                        <div class="overview-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="overview-details">
+                            <h4>LinkedIn Profile</h4>
+                            <p id="linkedin-connections">0 Connections</p>
+                            <p id="linkedin-completeness">0% Complete</p>
+                        </div>
+                    </div>
+                    <div class="overview-card">
+                        <div class="overview-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="overview-details">
+                            <h4>Coding Platforms</h4>
+                            <p id="leetcode-problems">0 LeetCode Problems</p>
+                            <p id="codeforces-rating">0 CodeForces Rating</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="summary-section">
+                    <h3>Profile Summary</h3>
+                    <p id="profile-summary">Loading profile summary...</p>
+                </div>
+
+                <div class="metrics-section">
+                    <h3>Key Metrics</h3>
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <h4>Technical Skills</h4>
+                            <div class="metric-chart-container">
+                                <canvas id="skills-chart"></canvas>
+                            </div>
+                        </div>
+                        <div class="metric-card">
+                            <h4>Activity Distribution</h4>
+                            <div class="metric-chart-container">
+                                <canvas id="activity-chart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="skills" class="dashboard-section">
+                <h2>Skills Analysis</h2>
+                <div class="skills-container">
+                    <div class="skills-chart-container">
+                        <canvas id="skills-radar-chart"></canvas>
+                    </div>
+                    <div class="skills-list">
+                        <h3>Top Skills</h3>
+                        <ul id="top-skills-list">
+                            <!-- Skills will be populated by JavaScript -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="skills-recommendations">
+                    <h3>Skill Recommendations</h3>
+                    <p>Based on your profile and current industry trends, consider developing these skills:</p>
+                    <ul id="skill-recommendations">
+                        <!-- Recommendations will be populated by JavaScript -->
+                    </ul>
+                </div>
+            </section>
+
+            <section id="projects" class="dashboard-section">
+                <h2>Project Analysis</h2>
+                <div class="projects-overview">
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <h4>Total Projects</h4>
+                            <p id="total-projects">0</p>
+                        </div>
+                        <div class="metric">
+                            <h4>Project Diversity</h4>
+                            <p id="project-diversity">Low</p>
+                        </div>
+                        <div class="metric">
+                            <h4>Most Used Language</h4>
+                            <p id="most-used-language">-</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="projects-list">
+                    <h3>Top Projects</h3>
+                    <div id="top-projects">
+                        <!-- Projects will be populated by JavaScript -->
+                    </div>
+                </div>
+                <div class="project-recommendations">
+                    <h3>Project Recommendations</h3>
+                    <p>To enhance your portfolio, consider these project ideas:</p>
+                    <ul id="project-recommendations">
+                        <!-- Recommendations will be populated by JavaScript -->
+                    </ul>
+                </div>
+            </section>
+
+            <section id="contributions" class="dashboard-section">
+                <h2>Contribution Analysis</h2>
+                <div class="contribution-overview">
+                    <div class="contribution-chart-container">
+                        <h3>Contribution Activity (Last Year)</h3>
+                        <canvas id="contribution-chart"></canvas>
+                    </div>
+                    <div class="contribution-metrics">
+                        <div class="metric">
+                            <h4>Total Commits</h4>
+                            <p id="total-commits">0</p>
+                        </div>
+                        <div class="metric">
+                            <h4>Pull Requests</h4>
+                            <p id="total-prs">0</p>
+                        </div>
+                        <div class="metric">
+                            <h4>Issues Created</h4>
+                            <p id="total-issues">0</p>
+                        </div>
+                        <div class="metric">
+                            <h4>Open Source Contributions</h4>
+                            <p id="open-source-contributions">0</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contribution-recommendations">
+                    <h3>Contribution Recommendations</h3>
+                    <p>To improve your contribution profile, consider these actions:</p>
+                    <ul id="contribution-recommendations">
+                        <!-- Recommendations will be populated by JavaScript -->
+                    </ul>
+                </div>
+            </section>
+
+            <section id="recommendations" class="dashboard-section">
+                <h2>Actionable Recommendations</h2>
+                <div class="recommendations-container">
+                    <div class="recommendation-category">
+                        <h3><i class="fab fa-github"></i> GitHub Recommendations</h3>
+                        <ul id="github-recommendations">
+                            <!-- Recommendations will be populated by JavaScript -->
+                        </ul>
+                    </div>
+                    <div class="recommendation-category">
+                        <h3><i class="fab fa-linkedin"></i> LinkedIn Recommendations</h3>
+                        <ul id="linkedin-recommendations">
+                            <!-- Recommendations will be populated by JavaScript -->
+                        </ul>
+                    </div>
+                    <div class="recommendation-category">
+                        <h3><i class="fas fa-code"></i> Coding Platform Recommendations</h3>
+                        <ul id="coding-recommendations">
+                            <!-- Recommendations will be populated by JavaScript -->
+                        </ul>
+                    </div>
+                    <div class="recommendation-category">
+                        <h3><i class="fas fa-file-alt"></i> Resume Recommendations</h3>
+                        <ul id="resume-recommendations">
+                            <!-- Recommendations will be populated by JavaScript -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="career-path">
+                    <h3>Career Path Suggestions</h3>
+                    <p>Based on your skills and interests, these career paths might be a good fit:</p>
+                    <div id="career-paths">
+                        <!-- Career paths will be populated by JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <section id="comparison" class="dashboard-section">
+                <h2>Peer Comparison</h2>
+                <div class="comparison-chart-container">
+                    <canvas id="comparison-chart"></canvas>
+                </div>
+                <div class="comparison-insights">
+                    <h3>Comparison Insights</h3>
+                    <p id="comparison-summary">Loading comparison insights...</p>
+                    <div class="comparison-metrics">
+                        <div class="comparison-metric">
+                            <h4>Your Position</h4>
+                            <p id="peer-position">Top 0%</p>
+                        </div>
+                        <div class="comparison-metric">
+                            <h4>Strengths vs Peers</h4>
+                            <p id="peer-strengths">-</p>
+                        </div>
+                        <div class="comparison-metric">
+                            <h4>Areas to Improve</h4>
+                            <p id="peer-improvements">-</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
+
