@@ -1,0 +1,654 @@
+/* Dashboard Styles */
+.dashboard-main {
+  display: flex;
+  max-width: 1400px;
+  margin: 2rem auto;
+  gap: 2rem;
+  padding: 0 2rem;
+}
+
+.dashboard-header {
+  background-color: var(--white-color);
+  box-shadow: var(--box-shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.dashboard-header nav {
+  padding: 0.75rem 2rem;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-profile span {
+  font-weight: 500;
+}
+
+/* Sidebar */
+.dashboard-sidebar {
+  width: 280px;
+  background-color: var(--white-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  height: calc(100vh - 4rem);
+  position: sticky;
+  top: 5rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.profile-summary {
+  padding: 1.5rem;
+  text-align: center;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.profile-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 1rem;
+  border: 3px solid var(--primary-light);
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-summary h3 {
+  margin-bottom: 0.25rem;
+  font-size: 1.25rem;
+}
+
+.profile-summary p {
+  color: var(--gray-color);
+  margin-bottom: 0;
+  font-size: 0.875rem;
+}
+
+.dashboard-nav {
+  padding: 1rem 0;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.dashboard-nav ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-nav ul li a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  color: var(--dark-color);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.dashboard-nav ul li a:hover,
+.dashboard-nav ul li a.active {
+  background-color: rgba(79, 70, 229, 0.1);
+  color: var(--primary-color);
+}
+
+.dashboard-nav ul li a.active {
+  border-right: 3px solid var(--primary-color);
+}
+
+.dashboard-nav ul li a i {
+  width: 1.25rem;
+  text-align: center;
+}
+
+.overall-score {
+  padding: 1.5rem;
+  border-top: 1px solid var(--light-gray);
+  text-align: center;
+}
+
+.overall-score h4 {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: var(--gray-color);
+}
+
+.score-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: conic-gradient(var(--primary-color) 0%, var(--primary-color) 0%, var(--light-gray) 0%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  position: relative;
+}
+
+.score-circle::before {
+  content: "";
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: var(--white-color);
+}
+
+.score-circle span {
+  position: relative;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+/* Dashboard Content */
+.dashboard-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.dashboard-section {
+  background-color: var(--white-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  display: none;
+}
+
+.dashboard-section.active {
+  display: block;
+}
+
+.dashboard-section h2 {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+/* Overview Section */
+.overview-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.overview-card {
+  background-color: var(--lighter-gray);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.overview-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--primary-light);
+  color: var(--white-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.overview-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.overview-details h4 {
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.overview-details p {
+  margin-bottom: 0.25rem;
+  font-size: 0.875rem;
+  color: var(--gray-color);
+}
+
+.summary-section {
+  background-color: var(--lighter-gray);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.summary-section h3 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.metric-card {
+  background-color: var(--lighter-gray);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+}
+
+.metric-card h4 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.metric-chart-container {
+  height: 250px;
+  position: relative;
+}
+
+/* Skills Section */
+.skills-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.skills-chart-container {
+  height: 300px;
+  position: relative;
+}
+
+.skills-list {
+  background-color: var(--lighter-gray);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+}
+
+.skills-list h3 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.skills-list ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.skills-list ul li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem;
+  background-color: var(--white-color);
+  border-radius: var(--border-radius);
+}
+
+.skills-recommendations {
+  background-color: var(--lighter-gray);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+}
+
+.skills-recommendations h3 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.skills-recommendations ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.skills-recommendations ul li {
+  background-color: var(--white-color);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  border-left: 4px solid var(--primary-color);
+}
+
+/* Projects Section */
+.projects-overview {
+  margin-bottom: 2rem;
+}
+
+.project-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.metric {
+  background-color: var(--lighter-gray);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  text-align: center;
+}
+
+.metric h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: var(--gray-color);
+}
+
+.metric p {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0;
+  color: var(--dark-color);
+}
+
+.projects-list {
+  margin-bottom: 2rem;
+}
+
+.projects-list h3 {
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+}
+
+.project-card {
+  background-color: var(--lighter-gray);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.project-card h4 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.125rem;
+}
+
+.project-card h4 i {
+  color: var(--primary-color);
+}
+
+.project-card p {
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.project-tag {
+  background-color: var(--primary-light);
+  color: var(--white-color);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+}
+
+.project-recommendations {
+  background-color: var(--lighter-gray);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+}
+
+.project-recommendations h3 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.project-recommendations ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.project-recommendations ul li {
+  background-color: var(--white-color);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  border-left: 4px solid var(--secondary-color);
+}
+
+/* Contributions Section */
+.contribution-overview {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.contribution-chart-container {
+  background-color: var(--lighter-gray);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  height: 300px;
+  position: relative;
+}
+
+.contribution-chart-container h3 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.contribution-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.contribution-recommendations {
+  background-color: var(--lighter-gray);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+}
+
+.contribution-recommendations h3 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.contribution-recommendations ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.contribution-recommendations ul li {
+  background-color: var(--white-color);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  border-left: 4px solid var(--warning-color);
+}
+
+/* Recommendations Section */
+.recommendations-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.recommendation-category {
+  background-color: var(--lighter-gray);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+}
+
+.recommendation-category h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.recommendation-category h3 i {
+  color: var(--primary-color);
+}
+
+.recommendation-category ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.recommendation-category ul li {
+  background-color: var(--white-color);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  border-left: 4px solid var(--primary-color);
+}
+
+.career-path {
+  background-color: var(--lighter-gray);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+}
+
+.career-path h3 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.career-paths {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.career-path-card {
+  background-color: var(--white-color);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  border-top: 4px solid var(--secondary-color);
+}
+
+.career-path-card h4 {
+  margin-bottom: 1rem;
+  font-size: 1.125rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.match-percentage {
+  font-size: 0.875rem;
+  color: var(--secondary-color);
+}
+
+.career-path-card ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.career-path-card ul li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.career-path-card ul li i {
+  color: var(--secondary-color);
+}
+
+/* Comparison Section */
+.comparison-chart-container {
+  background-color: var(--lighter-gray);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  height: 300px;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.comparison-chart-container h3 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.comparison-insights {
+  background-color: var(--lighter-gray);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+}
+
+.comparison-insights h3 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.comparison-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.comparison-metric {
+  text-align: center;
+}
+
+.comparison-metric h4 {
+  color: var(--gray-color);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.comparison-metric p {
+  font-weight: 700;
+  margin-bottom: 0;
+  color: var(--dark-color);
+}
+
+/* Responsive Dashboard */
+@media (max-width: 1024px) {
+  .dashboard-main {
+    flex-direction: column;
+  }
+
+  .dashboard-sidebar {
+    width: 100%;
+    height: auto;
+    position: static;
+  }
+
+  .skills-container,
+  .contribution-overview {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-section {
+    padding: 1.5rem;
+  }
+
+  .overview-cards,
+  .project-metrics,
+  .contribution-metrics,
+  .comparison-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .recommendations-container {
+    grid-template-columns: 1fr;
+  }
+}
+
